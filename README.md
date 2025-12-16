@@ -1,4 +1,4 @@
-# Frontend Laboratory App (Labs 7-11)
+# Frontend Laboratory App (Labs 6-11)
 
 This project is a Next.js application integrated with Firebase (Authentication, Firestore, Hosting) and Tailwind CSS. It was developed as part of the Frontend Frameworks laboratory course.
 
