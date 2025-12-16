@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Laboratory App (Labs 7-11)
 
-## Getting Started
+This project is a Next.js application integrated with Firebase (Authentication, Firestore, Hosting) and Tailwind CSS. It was developed as part of the Frontend Frameworks laboratory course.
 
-First, run the development server:
+**Author:** Student 15178
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+-   Node.js (v18 or higher)
+-   Git
+
+### 2. Installation
+Navigate to the project directory and install dependencies:
+
+```bash
+cd frontend-laboratory-app
+npm install
+```
+
+### 3. Environment Setup (Critical!)
+This app uses Firebase. You must create a `.env.local` file in the root of `frontend-laboratory-app` with your own Firebase configuration keys.
+
+**Example `.env.local`:**
+```env
+NEXT_PUBLIC_API_KEY=your_api_key_here
+NEXT_PUBLIC_AUTH_DOMAIN=your_project_id.firebaseapp.com
+NEXT_PUBLIC_PROJECT_ID=your_project_id
+NEXT_PUBLIC_STORAGE_BUCKET=your_project_id.appspot.com
+NEXT_PUBLIC_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_APP_ID=your_app_id
+```
+> **Note:** Do not commit this file to GitHub!
+
+### 4. Running Locally
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+---
+
+## 🧪 Testing
+
+The project includes Playwright E2E tests for navigation, authentication, and protected routes.
+
+**Run all tests:**
+```bash
+npx playwright test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Run UI Mode (Interactive):**
+```bash
+npx playwright test --ui
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Deployment (Firebase Hosting)
 
-## Learn More
+To deploy the production build to Firebase:
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Build the application:**
+    ```bash
+    npm run build
+    ```
+2.  **Deploy:**
+    ```bash
+    firebase deploy
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   `app/(public)`: Public routes (Login, Register, Verify).
+-   `app/(protected)`: Protected routes (Profile, Articles). Required Authentication.
+-   `app/components`: Reusable UI components (Layout, Cards, Forms).
+-   `app/lib`: Firebase initialization and Authentication Context.
+-   `tests/`: Playwright E2E test specifications.
