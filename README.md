@@ -2,7 +2,10 @@
 
 This project is a Next.js application integrated with Firebase (Authentication, Firestore, Hosting) and Tailwind CSS. It was developed as part of the Frontend Frameworks laboratory course.
 
-**Author:** Student 15178
+https://frameworki-frontendowe-56bc9.web.app/
+
+**Author:** Artem Ladovshchyk 15178
+
 
 ---
 
